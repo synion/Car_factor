@@ -1,5 +1,4 @@
-require_relative 'car_factory/car'
-require_relative 'car_factory/brands'
+require_relative 'car.rb'
 
 class CarFactory
   include Brands
