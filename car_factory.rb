@@ -1,6 +1,5 @@
 require_relative 'car_factory/car'
 require_relative 'car_factory/brands'
-require 'pry'
 
 class CarFactory
   include Brands

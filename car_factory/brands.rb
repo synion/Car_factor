@@ -20,27 +20,4 @@ module Brands
     raise_excluded_brand if (brand == brands && brands.is_a?(Array)) ||
                              ([brands].flatten & [brand].flatten).empty?
   end
-
-  def is_integer_or_hash?(args)
-    if args.is_a?(Integer)
-      number_cars_by_number(args)
-    elsif args.is_a?(Hash)
-      number_cars_by_hash(args)
-    end
-  end
-
-  def number_cars_by_number(args,cars =[])
-    args.times do
-      cars << Car.new(brands_collection.first)
-      brands_collection.rotate!
-    end
-    cars
-  end
-
-  def number_cars_by_hash(args,cars =[])
-    args.each do |car,amount|
-      amount.times { cars << Car.new(car) }
-    end
-    cars
-  end
 end
